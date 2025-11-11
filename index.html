@@ -1,0 +1,2495 @@
+<!DOCTYPE html>
+<html lang="id" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analisis Struktur Teks Berita</title>
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="/_sdk/data_sdk.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+      .highlight-judul {
+        background-color: #fef3c7;
+        border-left: 4px solid #f59e0b;
+      }
+      .highlight-kepala {
+        background-color: #dbeafe;
+        border-left: 4px solid #3b82f6;
+      }
+      .highlight-tubuh {
+        background-color: #dcfce7;
+        border-left: 4px solid #10b981;
+      }
+      .highlight-ekor {
+        background-color: #fce7f3;
+        border-left: 4px solid #ec4899;
+      }
+      .news-text {
+        line-height: 1.8;
+        font-size: 16px;
+      }
+      .analysis-card {
+        transition: all 0.3s ease;
+      }
+      .analysis-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      .shake {
+        animation: shake 0.5s ease-in-out;
+      }
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-5px);
+        }
+        75% {
+          transform: translateX(5px);
+        }
+      }
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+    </style>
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+    </style>
+  </head>
+  <body class="h-full bg-gradient-to-br from-blue-50 to-indigo-100 font-sans">
+    <div class="min-h-full p-6">
+      <header class="text-center mb-8">
+        <h1 id="main-title" class="text-4xl font-bold text-gray-800 mb-4">
+          Analisis Struktur Teks Berita
+        </h1>
+        <p
+          id="instruction-text"
+          class="text-lg text-gray-600 max-w-3xl mx-auto"
+        >
+          Pelajari struktur teks berita dengan menganalisis artikel tentang Lisa
+          BLACKPINK yang menjadi duta pariwisata Thailand. Identifikasi bagian
+          judul, kepala berita, tubuh berita, dan ekor berita.
+        </p>
+      </header>
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
+        <!-- Teks Berita -->
+        <div class="bg-white rounded-xl shadow-lg p-6">
+          <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+            <span
+              class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3"
+              >📰</span
+            >
+            Teks Berita
+          </h2>
+          <div id="news-content" class="news-text text-gray-700 space-y-4">
+            <div class="p-4 rounded-lg">
+              <h3
+                class="text-xl font-bold mb-3 bg-yellow-100 p-3 rounded-lg border-l-4 border-yellow-500"
+              >
+                <span class="text-yellow-600 font-bold mr-2">JUDUL:</span> Lisa
+                BLACKPINK Jadi Duta Pariwisata Thailand, Segudang Konten
+                Disiapkan
+              </h3>
+              <div class="space-y-3">
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P1</span
+                  >
+                  <strong>KOMPAS.com</strong> - Lalisa Manobal atau Lisa
+                  BLACKPINK resmi ditujuk menjadi duta pariwisata Thailand
+                  selama satu tahun ke depan terhitung mulai Senin (29/9/2025).
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P2</span
+                  >
+                  Penunjukan anggota grup idola Korea Selatan berdarah Thailand
+                  ini diumumkan resmi oleh Otoritas Pariwisata Thailand (TAT)
+                  pada Rabu (15/10/2025).
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P3</span
+                  >
+                  "Kolaborasi dengan Lisa sebagai duta pariwisata Thailand
+                  menandai tonggak penting dalam menyajikan pesona, keragaman,
+                  dan keajaiban Thailand dari perspektif baru, perspektif yang
+                  akan menginspirasi masyarakat Thailand dan wisatawan
+                  mancanegara (wisman)," kata Gubernur TAT Thapanee
+                  Kiatphaibool, dikutip dari TAT News, Kamis (16/10/2025).
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P4</span
+                  >
+                  Sebagai duta pariwisata, Lisa berperan mempromosikan Thailand
+                  lewat keindahan wisata Thailand hingga dilirik lebih banyak
+                  turis asing.
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P5</span
+                  >
+                  Lewat kampanye Amazing Thailand X Lisa, TAT berharap
+                  kolaborasi ini dapat mendongrak program bertema "Unforgettable
+                  Experience: Healing is the New Luxury" yang saat ini menjadi
+                  tema promosi pariwisata Thailand.
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P6</span
+                  >
+                  Dikutip dari Bangkok News, dengan lebih dari 106 juta pengikut
+                  di akun Instagram Lisa @lalalalisa_m, kolaborasi ini
+                  diperkirakan menjangkau sekitar satu miliar pemberitaan
+                  daring, yang 5-10 juta di antaranya ditargetkan sebagai jumlah
+                  aktual turis yang berkunjung ke Thailand pada 2026.
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P7</span
+                  >
+                  Thapanee mengatakan, penggemar Lisa merupakan pasar yang
+                  sangat potensial dengan pengeluaran rata-rata diperkirakan
+                  mencapai 50.000 baht atau Rp 25 jutaan per kunjungan.
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P8</span
+                  >
+                  Adapun promosi ini diperkirakan menghasilkan pendapatan
+                  pariwisata Thailand sekitar 250-500 miliar baht, yang akan
+                  membantu mendorong total pendapatan menjadi lebih dari 3
+                  triliun baht tahun depan.
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P9</span
+                  >
+                  Lisa juga akan tampil dalam iklan TV berdurasi 60 detik
+                  sebagai duta pariwisata Thailand. TAT bahkan berencana
+                  memproduksi klip tambahan berdurasi 30 detik dan 15 detik dari
+                  iklan tersebut, serta trailer terpisah berdurasi 30 detik.
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P10</span
+                  >
+                  Belum lagi, acara eksklusif yang menayangkan Lisa sebagai duta
+                  pariwisata Thailand juga siap digelar pada Januari 2026, serta
+                  12 pemotretan dan merchandise spesial yang disiapkan dalam
+                  kampanye wisata Thailand.
+                </p>
+                <h4
+                  class="text-lg font-semibold mt-6 mb-3 bg-purple-100 p-3 rounded-lg border-l-4 border-purple-500"
+                >
+                  <span class="text-purple-600 font-bold mr-2">SUB-JUDUL:</span>
+                  Alasan Lisa BLACKPINK dipilih jadi duta pariwisata Thailand
+                </h4>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P11</span
+                  >
+                  Pariwisata Thailand sedang menghadapi kesulitan selama tahun
+                  ini. Jumlah kunjungan turis asing di Thailand sepanjang
+                  Januari-Agustus 2025 dicatat menurun sebesar 7,5 persen
+                  dibanding tahun lalu.
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P12</span
+                  >
+                  Acara besar di Thailand mencakup agenda konser BLACKPINK
+                  selama tiga hari berturut-turut pada 24-26 Oktober 2025.
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P13</span
+                  >
+                  Sejauh ini, hotel-hotel di dekat lokasi Stadion Nasional
+                  Rajamangala Thailand melaporkan okupansi tinggi dari penggemar
+                  BLACKPINK atau "Blinks".
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P14</span
+                  >
+                  Penunjukan Lisa sebagai duta pariwisata juga bukan tanpa
+                  alasan. Gerak-gerik idola perempuan berusia 28 tahun ini
+                  selalu menjadi sorotan, tak terkecuali saat bersinggungan
+                  dengan negara kelahirannya, Thailand.
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P15</span
+                  >
+                  Bahkan, sebelum resmi ditetapkan sebagai duta pariwisata, Lisa
+                  berkali-kali dianggap sukses mempromosikan Thailand.
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P16</span
+                  >
+                  Salah satunya lewat debut akting di serial "The White Lotus"
+                  musim ketiga, yang dipandang oleh badan pariwisata Thailand
+                  sebagai peluang untuk mempromosikan perjalanan di provinsi
+                  selatan tahun ini.
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P17</span
+                  >
+                  "Aktivitasnya, seperti makan bakso atau mengenakan pakaian
+                  tradisional Thailand, sering mendapat perhatian di media
+                  sosial," kata Thapanee.
+                </p>
+                <p
+                  class="mb-4 p-3 bg-gray-50 rounded-lg border-l-4 border-gray-400"
+                >
+                  <span
+                    class="inline-block bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded mr-2"
+                    >P18</span
+                  >
+                  Lisa bahkan berkali-kali digaet sejumlah duta merek ternama
+                  dunia. Salah satunya oleh rumah mode Celine yang dilaporkan
+                  menghasilkan nilai sebesar 29 juta dolar Amerika Serikat (AS)
+                  atau sekitar Rp 480 miliar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Form Tugas -->
+        <div class="space-y-6">
+          <div class="flex items-center justify-between">
+            <h2 class="text-2xl font-bold text-gray-800 flex items-center">
+              <span
+                class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3"
+                >✏️</span
+              >
+              Form Tugas Analisis
+            </h2>
+            <div class="flex gap-2">
+              <button
+                onclick="showTeacherLogin()"
+                class="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition-colors text-sm"
+              >
+                👨‍🏫 Lihat Semua Jawaban
+              </button>
+            </div>
+          </div>
+          <!-- Teacher Login Modal -->
+          <div
+            id="teacher-login-modal"
+            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+          >
+            <div class="bg-white rounded-lg p-6 max-w-md mx-4 w-full">
+              <div class="text-center mb-6">
+                <div class="text-4xl mb-4">🔐</div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                  Akses Guru
+                </h3>
+                <p class="text-gray-600">
+                  Masukkan kode akses untuk melihat semua jawaban siswa
+                </p>
+              </div>
+              <div class="mb-6">
+                <label
+                  for="teacher-code"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Kode Akses:</label
+                >
+                <input
+                  type="password"
+                  id="teacher-code"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+                  placeholder="Masukkan kode akses..."
+                  onkeypress="if(event.key==='Enter') verifyTeacherCode()"
+                />
+                <div id="code-error" class="text-red-500 text-sm mt-2 hidden">
+                  Kode akses salah! Silakan coba lagi.
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <button
+                  onclick="closeTeacherLogin()"
+                  class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 flex-1"
+                >
+                  Batal
+                </button>
+                <button
+                  onclick="verifyTeacherCode()"
+                  class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 flex-1"
+                >
+                  Masuk
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Google Sheets Integration Modal -->
+          <div
+            id="google-sheets-modal"
+            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+          >
+            <div
+              class="bg-white rounded-lg p-6 max-w-4xl max-h-[90vh] overflow-y-auto mx-4 w-full"
+            >
+              <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">
+                  📊 Integrasi Google Sheets
+                </h3>
+                <button
+                  onclick="closeGoogleSheetsMenu()"
+                  class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+                >
+                  Tutup
+                </button>
+              </div>
+              <div class="space-y-6">
+                <!-- Status Koneksi -->
+                <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
+                  <div class="flex items-center mb-3">
+                    <div class="text-blue-400 mr-3">🔗</div>
+                    <h4 class="text-lg font-bold text-blue-800">
+                      Status Koneksi
+                    </h4>
+                  </div>
+                  <div id="connection-status" class="text-sm text-blue-700">
+                    <div class="flex items-center mb-2">
+                      <span
+                        class="w-3 h-3 bg-blue-400 rounded-full mr-2 animate-pulse"
+                      ></span>
+                      <strong>Menghubungkan ke Canva Sheet...</strong>
+                    </div>
+                    <p class="mt-2 text-blue-700">
+                      🔄 Sedang menginisialisasi koneksi data...
+                    </p>
+                  </div>
+                </div>
+                <!-- Export ke Google Sheets -->
+                <div class="bg-green-50 border-l-4 border-green-400 p-4">
+                  <div class="flex items-center mb-3">
+                    <div class="text-green-400 mr-3">📤</div>
+                    <h4 class="text-lg font-bold text-green-800">
+                      Export ke Google Sheets
+                    </h4>
+                  </div>
+                  <p class="text-sm text-green-700 mb-4">
+                    Export semua data jawaban siswa ke format yang kompatibel
+                    dengan Google Sheets.
+                  </p>
+                  <div class="flex gap-3">
+                    <button
+                      onclick="exportToCSV()"
+                      class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 text-sm"
+                    >
+                      📄 Download CSV
+                    </button>
+                    <button
+                      onclick="copyToClipboard()"
+                      class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm"
+                    >
+                      📋 Copy Data
+                    </button>
+                    <button
+                      onclick="generateGoogleSheetsLink()"
+                      class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 text-sm"
+                    >
+                      🔗 Buka Google Sheets
+                    </button>
+                  </div>
+                </div>
+                <!-- Panduan Integrasi -->
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                  <div class="flex items-center mb-3">
+                    <div class="text-yellow-400 mr-3">📚</div>
+                    <h4 class="text-lg font-bold text-yellow-800">
+                      Panduan Akses Data
+                    </h4>
+                  </div>
+                  <div class="text-sm text-yellow-700 space-y-2">
+                    <p>
+                      <strong
+                        >Cara 1: Google Sheets (Otomatis -
+                        Direkomendasikan)</strong
+                      >
+                    </p>
+                    <ul class="list-disc list-inside ml-4 space-y-1">
+                      <li>
+                        Klik tombol "🔗 Buka Google Sheets" untuk akses langsung
+                      </li>
+                      <li>
+                        Data terupdate otomatis setiap ada siswa yang submit
+                      </li>
+                      <li>
+                        Dapat diakses kapan saja tanpa perlu export manual
+                      </li>
+                      <li>Bookmark link untuk akses cepat di masa depan</li>
+                    </ul>
+                    <p class="mt-4">
+                      <strong>Cara 2: Canva Sheet (Otomatis)</strong>
+                    </p>
+                    <ul class="list-disc list-inside ml-4 space-y-1">
+                      <li>Data tersimpan otomatis di Canva Sheet</li>
+                      <li>Akses melalui dashboard Canva → Data → Sheets</li>
+                      <li>
+                        Dapat diekspor ke berbagai format termasuk Excel/CSV
+                      </li>
+                    </ul>
+                    <p class="mt-4">
+                      <strong>Cara 3: Export Manual (Backup)</strong>
+                    </p>
+                    <ul class="list-disc list-inside ml-4 space-y-1">
+                      <li>
+                        Gunakan "Download CSV" atau "Copy Data" jika diperlukan
+                      </li>
+                      <li>Untuk backup atau analisis offline</li>
+                      <li>Import manual ke Google Sheets atau Excel</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Preview Data -->
+                <div class="bg-gray-50 border-l-4 border-gray-400 p-4">
+                  <div class="flex items-center mb-3">
+                    <div class="text-gray-400 mr-3">👁️</div>
+                    <h4 class="text-lg font-bold text-gray-800">
+                      Preview Data
+                    </h4>
+                  </div>
+                  <div id="data-preview" class="text-sm">
+                    <div class="overflow-x-auto">
+                      <table class="min-w-full border border-gray-300">
+                        <thead class="bg-gray-100">
+                          <tr>
+                            <th
+                              class="border border-gray-300 px-2 py-1 text-left"
+                            >
+                              No
+                            </th>
+                            <th
+                              class="border border-gray-300 px-2 py-1 text-left"
+                            >
+                              Nama Siswa
+                            </th>
+                            <th
+                              class="border border-gray-300 px-2 py-1 text-left"
+                            >
+                              Waktu Submit
+                            </th>
+                            <th
+                              class="border border-gray-300 px-2 py-1 text-left"
+                            >
+                              Percobaan
+                            </th>
+                            <th
+                              class="border border-gray-300 px-2 py-1 text-left"
+                            >
+                              Nilai Total
+                            </th>
+                            <th
+                              class="border border-gray-300 px-2 py-1 text-left"
+                            >
+                              Grade
+                            </th>
+                            <th
+                              class="border border-gray-300 px-2 py-1 text-left"
+                            >
+                              Bagian Terisi
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody id="preview-table-body">
+                          <tr>
+                            <td
+                              colspan="7"
+                              class="border border-gray-300 px-2 py-4 text-center text-gray-500"
+                            >
+                              Belum ada data untuk ditampilkan
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!-- Statistik -->
+                <div class="bg-indigo-50 border-l-4 border-indigo-400 p-4">
+                  <div class="flex items-center mb-3">
+                    <div class="text-indigo-400 mr-3">📈</div>
+                    <h4 class="text-lg font-bold text-indigo-800">
+                      Statistik Data
+                    </h4>
+                  </div>
+                  <div
+                    id="data-statistics"
+                    class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm"
+                  >
+                    <div class="bg-white rounded p-3 text-center">
+                      <div
+                        class="text-2xl font-bold text-blue-600"
+                        id="total-submissions"
+                      >
+                        0
+                      </div>
+                      <div class="text-gray-600">Total Jawaban</div>
+                    </div>
+                    <div class="bg-white rounded p-3 text-center">
+                      <div
+                        class="text-2xl font-bold text-green-600"
+                        id="unique-students"
+                      >
+                        0
+                      </div>
+                      <div class="text-gray-600">Siswa Unik</div>
+                    </div>
+                    <div class="bg-white rounded p-3 text-center">
+                      <div
+                        class="text-2xl font-bold text-purple-600"
+                        id="average-score"
+                      >
+                        0
+                      </div>
+                      <div class="text-gray-600">Rata-rata Nilai</div>
+                    </div>
+                    <div class="bg-white rounded p-3 text-center">
+                      <div
+                        class="text-2xl font-bold text-orange-600"
+                        id="completion-rate"
+                      >
+                        0%
+                      </div>
+                      <div class="text-gray-600">Tingkat Kelengkapan</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Teacher View Modal -->
+          <div
+            id="teacher-modal"
+            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+          >
+            <div
+              class="bg-white rounded-lg p-6 max-w-6xl max-h-[90vh] overflow-y-auto mx-4 w-full"
+            >
+              <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">
+                  📊 Semua Jawaban Siswa
+                </h3>
+                <div class="flex gap-2">
+                  <button
+                    onclick="deleteAllSubmissions()"
+                    class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 text-sm"
+                  >
+                    🗑️ Hapus Semua
+                  </button>
+                  <button
+                    onclick="toggleTeacherView()"
+                    class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+                  >
+                    Tutup
+                  </button>
+                </div>
+              </div>
+              <div id="submissions-list" class="space-y-4">
+                <div class="text-center text-gray-500 py-8">
+                  <div class="text-4xl mb-4">📝</div>
+                  <p>Belum ada jawaban yang masuk</p>
+                  <p class="text-sm mt-2">
+                    Jawaban siswa akan muncul di sini setelah mereka submit
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-6">
+            <!-- Status Pengerjaan -->
+            <div
+              id="status-container"
+              class="mb-6 p-4 rounded-lg border-2 border-dashed border-gray-300"
+            >
+              <div id="status-not-started" class="text-center">
+                <div class="text-2xl mb-2">📝</div>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">
+                  Belum Dikerjakan
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  Masukkan nama Anda untuk memulai tugas analisis
+                </p>
+                <p class="text-blue-600 text-xs mt-2">
+                  💡 Setiap siswa dapat mengerjakan maksimal 2 kali
+                </p>
+              </div>
+              <div id="status-completed" class="text-center hidden">
+                <div class="text-2xl mb-2">✅</div>
+                <h3 class="text-lg font-bold text-green-800 mb-2">
+                  Tugas Selesai
+                </h3>
+                <p class="text-green-600 text-sm">
+                  Analisis struktur teks berita telah diselesaikan
+                </p>
+                <p id="completion-info" class="text-gray-500 text-xs mt-2"></p>
+              </div>
+            </div>
+            <div class="mb-6">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">
+                Petunjuk Pengerjaan:
+              </h3>
+              <ul class="text-gray-600 space-y-1 text-sm">
+                <li>• Masukkan nama lengkap Anda terlebih dahulu</li>
+                <li>
+                  • Baca teks berita dengan cermat, perhatikan nomor paragraf
+                  (P1, P2, dst.)
+                </li>
+                <li>
+                  • <strong>Untuk JUDUL:</strong> Tulis lengkap teks judulnya
+                </li>
+                <li>
+                  • <strong>Untuk bagian lain:</strong> Boleh tulis lengkap ATAU
+                  cukup nomor paragrafnya saja (contoh: P1, P2-P5)
+                </li>
+                <li>
+                  • Analisis sendiri bagian mana yang termasuk setiap struktur
+                </li>
+                <li>
+                  •
+                  <strong
+                    >Setiap siswa dapat mengerjakan maksimal 2 kali</strong
+                  >
+                </li>
+                <li>
+                  •
+                  <strong>Periksa jawaban dengan teliti sebelum submit!</strong>
+                </li>
+              </ul>
+            </div>
+            <form id="analysisForm" class="space-y-6">
+              <!-- Nama Siswa -->
+              <div class="bg-blue-50 border-l-4 border-blue-400 pl-4 py-3">
+                <div class="flex items-center mb-3">
+                  <div class="w-4 h-4 bg-blue-400 rounded mr-3"></div>
+                  <h3 class="text-lg font-bold text-gray-800">
+                    Identitas Siswa
+                  </h3>
+                </div>
+                <div>
+                  <label
+                    for="student-name"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Nama Lengkap:</label
+                  >
+                  <input
+                    type="text"
+                    id="student-name"
+                    name="student-name"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                    placeholder="Masukkan nama lengkap Anda..."
+                    required
+                  />
+                </div>
+              </div>
+              <!-- Judul -->
+              <div class="border-l-4 border-yellow-400 pl-4">
+                <div class="flex items-center mb-3">
+                  <div class="w-4 h-4 bg-yellow-400 rounded mr-3"></div>
+                  <h3 class="text-lg font-bold text-gray-800">
+                    1. Judul (Headline)
+                  </h3>
+                </div>
+                <div>
+                  <label
+                    for="judul-text"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Tuliskan judul berita:</label
+                  >
+                  <textarea
+                    id="judul-text"
+                    name="judul-text"
+                    rows="2"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                    placeholder="Tulis lengkap judul berita..."
+                  ></textarea>
+                </div>
+              </div>
+              <!-- Kepala Berita -->
+              <div class="border-l-4 border-blue-400 pl-4">
+                <div class="flex items-center mb-3">
+                  <div class="w-4 h-4 bg-blue-400 rounded mr-3"></div>
+                  <h3 class="text-lg font-bold text-gray-800">
+                    2. Kepala Berita (Lead)
+                  </h3>
+                </div>
+                <div>
+                  <label
+                    for="kepala-text"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Tuliskan kepala berita:</label
+                  >
+                  <textarea
+                    id="kepala-text"
+                    name="kepala-text"
+                    rows="3"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+                    placeholder="Tuliskan bagian kepala berita..."
+                  ></textarea>
+                </div>
+              </div>
+              <!-- Tubuh Berita -->
+              <div class="border-l-4 border-green-400 pl-4">
+                <div class="flex items-center mb-3">
+                  <div class="w-4 h-4 bg-green-400 rounded mr-3"></div>
+                  <h3 class="text-lg font-bold text-gray-800">
+                    3. Tubuh Berita (Body)
+                  </h3>
+                </div>
+                <div>
+                  <label
+                    for="tubuh-text"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Tuliskan tubuh berita:</label
+                  >
+                  <textarea
+                    id="tubuh-text"
+                    name="tubuh-text"
+                    rows="8"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent"
+                    placeholder="Tuliskan bagian tubuh berita..."
+                  ></textarea>
+                </div>
+              </div>
+              <!-- Ekor Berita -->
+              <div class="border-l-4 border-pink-400 pl-4">
+                <div class="flex items-center mb-3">
+                  <div class="w-4 h-4 bg-pink-400 rounded mr-3"></div>
+                  <h3 class="text-lg font-bold text-gray-800">
+                    4. Ekor Berita (Tail)
+                  </h3>
+                </div>
+                <div>
+                  <label
+                    for="ekor-text"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Tuliskan ekor berita:</label
+                  >
+                  <textarea
+                    id="ekor-text"
+                    name="ekor-text"
+                    rows="3"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-400 focus:border-transparent"
+                    placeholder="Tuliskan bagian ekor berita..."
+                  ></textarea>
+                </div>
+              </div>
+              <!-- Tombol -->
+              <div class="flex gap-4 pt-4">
+                <button
+                  type="button"
+                  id="clear-btn"
+                  onclick="clearForm()"
+                  class="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 transition-colors"
+                >
+                  Bersihkan Form
+                </button>
+                <button
+                  type="button"
+                  id="submit-btn"
+                  onclick="submitFinalAnswers()"
+                  class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors flex-1 font-semibold"
+                >
+                  Submit Final
+                </button>
+              </div>
+              <!-- Peringatan -->
+              <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+                <div class="flex">
+                  <div class="text-yellow-400 mr-3">⚠️</div>
+                  <div>
+                    <h4 class="text-sm font-bold text-yellow-800">
+                      Peringatan Penting:
+                    </h4>
+                    <p class="text-sm text-yellow-700 mt-1">
+                      Setiap siswa dapat mengerjakan maksimal 2 kali. Pastikan
+                      jawaban sudah benar sebelum submit!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const defaultConfig = {
+        main_title: "Analisis Struktur Teks Berita",
+        instruction_text:
+          "Pelajari struktur teks berita dengan menganalisis artikel tentang Lisa BLACKPINK yang menjadi duta pariwisata Thailand. Identifikasi bagian judul, kepala berita, tubuh berita, dan ekor berita.",
+      };
+
+      let allSubmissions = [];
+      let isDataSdkReady = false;
+      let connectionRetryCount = 0;
+      const maxRetries = 5;
+
+      // Auto-grading system
+      function calculateScore(answers) {
+        const correctAnswers = {
+          judul:
+            "Lisa BLACKPINK Jadi Duta Pariwisata Thailand, Segudang Konten Disiapkan",
+          kepala: {
+            paragraphs: ["P1", "1"],
+            content:
+              "Lalisa Manobal atau Lisa BLACKPINK resmi ditujuk menjadi duta pariwisata Thailand selama satu tahun ke depan terhitung mulai Senin (29/9/2025).",
+          },
+          tubuh: {
+            paragraphs: [
+              "P2",
+              "P3",
+              "P4",
+              "P5",
+              "P6",
+              "P7",
+              "P8",
+              "P9",
+              "P10",
+              "P11",
+              "P12",
+              "P13",
+              "P14",
+              "P15",
+              "P16",
+              "P17",
+              "P18",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+            ],
+            ranges: ["P2-P18", "P2-18", "2-18"],
+            content: [
+              "Penunjukan anggota grup idola Korea Selatan berdarah Thailand ini diumumkan resmi oleh Otoritas Pariwisata Thailand (TAT) pada Rabu (15/10/2025).",
+              "Kolaborasi dengan Lisa sebagai duta pariwisata Thailand menandai tonggak penting dalam menyajikan pesona, keragaman, dan keajaiban Thailand dari perspektif baru",
+              "Sebagai duta pariwisata, Lisa berperan mempromosikan Thailand lewat keindahan wisata Thailand hingga dilirik lebih banyak turis asing.",
+              'Lewat kampanye Amazing Thailand X Lisa, TAT berharap kolaborasi ini dapat mendongrak program bertema "Unforgettable Experience: Healing is the New Luxury"',
+              "dengan lebih dari 106 juta pengikut di akun Instagram Lisa @lalalalisa_m, kolaborasi ini diperkirakan menjangkau sekitar satu miliar pemberitaan daring",
+              "Thapanee mengatakan, penggemar Lisa merupakan pasar yang sangat potensial dengan pengeluaran rata-rata diperkirakan mencapai 50.000 baht",
+              "promosi ini diperkirakan menghasilkan pendapatan pariwisata Thailand sekitar 250-500 miliar baht",
+              "Lisa juga akan tampil dalam iklan TV berdurasi 60 detik sebagai duta pariwisata Thailand",
+              "acara eksklusif yang menayangkan Lisa sebagai duta pariwisata Thailand juga siap digelar pada Januari 2026",
+              "Pariwisata Thailand sedang menghadapi kesulitan selama tahun ini",
+              "Jumlah kunjungan turis asing di Thailand sepanjang Januari-Agustus 2025 dicatat menurun sebesar 7,5 persen",
+              "Acara besar di Thailand mencakup agenda konser BLACKPINK selama tiga hari berturut-turut pada 24-26 Oktober 2025",
+              "hotel-hotel di dekat lokasi Stadion Nasional Rajamangala Thailand melaporkan okupansi tinggi dari penggemar BLACKPINK",
+              "Penunjukan Lisa sebagai duta pariwisata juga bukan tanpa alasan",
+              "Gerak-gerik idola perempuan berusia 28 tahun ini selalu menjadi sorotan",
+              "sebelum resmi ditetapkan sebagai duta pariwisata, Lisa berkali-kali dianggap sukses mempromosikan Thailand",
+              'debut akting di serial "The White Lotus" musim ketiga',
+              "Aktivitasnya, seperti makan bakso atau mengenakan pakaian tradisional Thailand, sering mendapat perhatian di media sosial",
+              "Lisa bahkan berkali-kali digaet sejumlah duta merek ternama dunia",
+              "rumah mode Celine yang dilaporkan menghasilkan nilai sebesar 29 juta dolar Amerika Serikat",
+            ],
+          },
+          ekor: {
+            paragraphs: ["P18", "18"],
+            content: [
+              "Lisa bahkan berkali-kali digaet sejumlah duta merek ternama dunia",
+              "rumah mode Celine yang dilaporkan menghasilkan nilai sebesar 29 juta dolar Amerika Serikat",
+              "sekitar Rp 480 miliar",
+            ],
+          },
+        };
+
+        let scores = {
+          judul: 0,
+          kepala: 0,
+          tubuh: 0,
+          ekor: 0,
+        };
+
+        // Score Judul (25 points)
+        if (answers["judul-text"]) {
+          const judulAnswer = answers["judul-text"].toLowerCase().trim();
+
+          if (
+            judulAnswer.includes("lisa") &&
+            judulAnswer.includes("blackpink") &&
+            judulAnswer.includes("duta") &&
+            judulAnswer.includes("pariwisata") &&
+            judulAnswer.includes("thailand")
+          ) {
+            scores.judul = 25;
+          } else if (
+            judulAnswer.includes("lisa") &&
+            judulAnswer.includes("thailand")
+          ) {
+            scores.judul = 15;
+          } else if (
+            judulAnswer.includes("lisa") ||
+            judulAnswer.includes("thailand")
+          ) {
+            scores.judul = 10;
+          } else if (judulAnswer.length > 10) {
+            scores.judul = 5;
+          }
+        }
+
+        // Score Kepala Berita (25 points)
+        if (answers["kepala-text"]) {
+          const kepalaAnswer = answers["kepala-text"].toLowerCase().trim();
+
+          // Check if answer mentions correct paragraph numbers
+          const mentionsParagraph = correctAnswers.kepala.paragraphs.some((p) =>
+            kepalaAnswer.includes(p.toLowerCase())
+          );
+
+          // Check if answer contains full content
+          const containsContent =
+            kepalaAnswer.includes("lalisa") &&
+            kepalaAnswer.includes("lisa") &&
+            kepalaAnswer.includes("blackpink") &&
+            kepalaAnswer.includes("duta pariwisata") &&
+            kepalaAnswer.includes("thailand") &&
+            kepalaAnswer.includes("satu tahun");
+
+          if (containsContent) {
+            scores.kepala = 25; // Full content gets full points
+          } else if (mentionsParagraph) {
+            scores.kepala = 25; // Correct paragraph reference gets full points
+          } else if (
+            kepalaAnswer.includes("lisa") &&
+            kepalaAnswer.includes("duta") &&
+            kepalaAnswer.includes("thailand")
+          ) {
+            scores.kepala = 20;
+          } else if (
+            kepalaAnswer.includes("lisa") &&
+            kepalaAnswer.includes("thailand")
+          ) {
+            scores.kepala = 15;
+          } else if (
+            kepalaAnswer.includes("lisa") ||
+            kepalaAnswer.includes("thailand")
+          ) {
+            scores.kepala = 10;
+          } else if (kepalaAnswer.length > 5) {
+            scores.kepala = 5;
+          }
+        }
+
+        // Score Tubuh Berita (35 points)
+        if (answers["tubuh-text"]) {
+          const tubuhAnswer = answers["tubuh-text"].toLowerCase().trim();
+          let tubuhScore = 0;
+
+          // Check if answer mentions correct paragraph ranges
+          const mentionsRange = correctAnswers.tubuh.ranges.some((range) =>
+            tubuhAnswer.includes(range.toLowerCase())
+          );
+
+          // Check if answer mentions multiple correct paragraphs
+          const mentionedParagraphs = correctAnswers.tubuh.paragraphs.filter(
+            (p) => tubuhAnswer.includes(p.toLowerCase())
+          ).length;
+
+          // Check for key content points
+          const keyPoints = [
+            "otoritas pariwisata thailand",
+            "tat",
+            "thapanee kiatphaibool",
+            "amazing thailand",
+            "106 juta pengikut",
+            "instagram",
+            "50.000 baht",
+            "250-500 miliar baht",
+            "iklan tv",
+            "januari 2026",
+            "kesulitan",
+            "menurun 7,5 persen",
+            "konser blackpink",
+            "oktober 2025",
+            "white lotus",
+            "celine",
+            "29 juta dolar",
+          ];
+
+          if (mentionsRange) {
+            tubuhScore = 35; // Perfect range reference gets full points
+          } else if (mentionedParagraphs >= 10) {
+            tubuhScore = 35; // Mentioning most paragraphs gets full points
+          } else if (mentionedParagraphs >= 5) {
+            tubuhScore = 30; // Good paragraph coverage
+          } else if (mentionedParagraphs >= 2) {
+            tubuhScore = 25; // Some paragraph coverage
+          } else {
+            // Score based on content keywords
+            keyPoints.forEach((point) => {
+              if (tubuhAnswer.includes(point)) {
+                tubuhScore += 2;
+              }
+            });
+
+            // Bonus for comprehensive content answer
+            if (tubuhAnswer.length > 500) tubuhScore += 5;
+            if (tubuhAnswer.length > 1000) tubuhScore += 5;
+          }
+
+          scores.tubuh = Math.min(tubuhScore, 35);
+        }
+
+        // Score Ekor Berita (15 points)
+        if (answers["ekor-text"]) {
+          const ekorAnswer = answers["ekor-text"].toLowerCase().trim();
+
+          // Check if answer mentions correct paragraph labels
+          const mentionsParagraph = correctAnswers.ekor.paragraphs.some((p) =>
+            ekorAnswer.includes(p.toLowerCase())
+          );
+
+          // Check if answer contains content about Lisa's brand endorsements
+          const containsContent =
+            ekorAnswer.includes("lisa") &&
+            (ekorAnswer.includes("duta merek") ||
+              ekorAnswer.includes("merek") ||
+              ekorAnswer.includes("celine") ||
+              ekorAnswer.includes("29 juta dolar") ||
+              ekorAnswer.includes("480 miliar"));
+
+          if (containsContent) {
+            scores.ekor = 15; // Full content gets full points
+          } else if (mentionsParagraph) {
+            scores.ekor = 15; // Correct paragraph reference gets full points
+          } else if (
+            ekorAnswer.includes("lisa") &&
+            ekorAnswer.includes("merek")
+          ) {
+            scores.ekor = 12;
+          } else if (
+            ekorAnswer.includes("celine") ||
+            ekorAnswer.includes("dolar") ||
+            ekorAnswer.includes("miliar")
+          ) {
+            scores.ekor = 10;
+          } else if (
+            ekorAnswer.includes("lisa") ||
+            ekorAnswer.includes("brand") ||
+            ekorAnswer.includes("endorsement")
+          ) {
+            scores.ekor = 8;
+          } else if (ekorAnswer.length > 3) {
+            scores.ekor = 5;
+          }
+        }
+
+        const totalScore =
+          scores.judul + scores.kepala + scores.tubuh + scores.ekor;
+
+        // Determine grade
+        let grade = "";
+        let feedback = "";
+
+        if (totalScore >= 90) {
+          grade = "A";
+          feedback = "Excellent! Pemahaman struktur teks berita sangat baik.";
+        } else if (totalScore >= 80) {
+          grade = "B+";
+          feedback =
+            "Very Good! Analisis struktur sudah tepat dengan detail yang baik.";
+        } else if (totalScore >= 70) {
+          grade = "B";
+          feedback =
+            "Good! Pemahaman struktur berita cukup baik, perlu sedikit perbaikan.";
+        } else if (totalScore >= 60) {
+          grade = "C+";
+          feedback =
+            "Fair! Masih perlu belajar lebih dalam tentang struktur teks berita.";
+        } else if (totalScore >= 50) {
+          grade = "C";
+          feedback =
+            "Acceptable! Pemahaman dasar ada, tapi perlu banyak perbaikan.";
+        } else {
+          grade = "D";
+          feedback =
+            "Needs Improvement! Silakan pelajari kembali struktur teks berita.";
+        }
+
+        return {
+          score_judul: scores.judul,
+          score_kepala: scores.kepala,
+          score_tubuh: scores.tubuh,
+          score_ekor: scores.ekor,
+          total_score: totalScore,
+          grade: grade,
+          feedback: feedback,
+        };
+      }
+
+      // Data handler for the Data SDK
+      const dataHandler = {
+        onDataChanged(data) {
+          allSubmissions = data;
+          updateSubmissionsList();
+        },
+      };
+
+      // Connection status management
+      function updateConnectionStatus(status) {
+        const indicator = document.getElementById("connection-indicator");
+        const text = document.getElementById("connection-text");
+        const statusElement = document.getElementById("connection-status");
+
+        if (indicator && text) {
+          switch (status) {
+            case "connecting":
+              indicator.className =
+                "mt-4 inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium pulse";
+              text.textContent = "Menghubungkan ke Canva Sheet...";
+              break;
+            case "connected":
+              indicator.className =
+                "mt-4 inline-flex items-center bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium";
+              text.innerHTML = "✅ Terhubung ke Canva Sheet";
+              break;
+            case "error":
+              indicator.className =
+                "mt-4 inline-flex items-center bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-medium";
+              text.innerHTML = "❌ Koneksi Bermasalah";
+              break;
+            case "retrying":
+              indicator.className =
+                "mt-4 inline-flex items-center bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-medium pulse";
+              text.innerHTML = `🔄 Mencoba lagi... (${connectionRetryCount}/${maxRetries})`;
+              break;
+          }
+        }
+
+        if (statusElement) {
+          switch (status) {
+            case "connecting":
+              statusElement.innerHTML = `
+                            <div class="flex items-center mb-2">
+                                <span class="w-3 h-3 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
+                                <strong>Menghubungkan ke Canva Sheet...</strong>
+                            </div>
+                            <p class="mt-2 text-blue-700">🔄 Sedang menginisialisasi koneksi data...</p>
+                        `;
+              break;
+            case "connected":
+              statusElement.innerHTML = `
+                            <div class="flex items-center mb-2">
+                                <span class="w-3 h-3 bg-green-400 rounded-full mr-2"></span>
+                                <strong>✅ Terhubung dengan Canva Sheet</strong> (Data tersimpan otomatis)
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-3 h-3 bg-green-400 rounded-full mr-2"></span>
+                                Terintegrasi dengan Google Sheets (Real-time sync)
+                            </div>
+                            <p class="mt-2 text-green-700">Semua jawaban siswa tersimpan secara otomatis di Canva Sheet dan dapat diakses guru melalui dashboard Canva atau Google Sheets.</p>
+                            <div class="mt-3 p-2 bg-green-100 rounded">
+                                <p class="text-green-800 text-xs font-medium">
+                                    🎯 <strong>Siap Digunakan:</strong> Data SDK aktif dan siap menerima jawaban siswa
+                                </p>
+                            </div>
+                        `;
+              break;
+            case "error":
+              statusElement.innerHTML = `
+                            <div class="flex items-center mb-2">
+                                <span class="w-3 h-3 bg-red-400 rounded-full mr-2"></span>
+                                <strong>❌ Koneksi Bermasalah</strong>
+                            </div>
+                            <p class="mt-2 text-red-700">Terjadi masalah saat menghubungkan ke Canva Sheet. Silakan refresh halaman atau hubungi guru.</p>
+                            <div class="mt-3 p-2 bg-red-100 rounded">
+                                <p class="text-red-800 text-xs font-medium">
+                                    ⚠️ <strong>Perhatian:</strong> Data mungkin tidak tersimpan dengan benar
+                                </p>
+                            </div>
+                        `;
+              break;
+            case "retrying":
+              statusElement.innerHTML = `
+                            <div class="flex items-center mb-2">
+                                <span class="w-3 h-3 bg-yellow-400 rounded-full mr-2 animate-pulse"></span>
+                                <strong>Mencoba Menghubungkan Ulang...</strong> (${connectionRetryCount}/${maxRetries})
+                            </div>
+                            <p class="mt-2 text-yellow-700">🔄 Sedang mencoba menghubungkan ke Canva Sheet...</p>
+                        `;
+              break;
+          }
+        }
+      }
+
+      // Initialize Data SDK with robust retry mechanism
+      async function initializeDataSdk() {
+        updateConnectionStatus("connecting");
+
+        const tryConnect = async () => {
+          try {
+            if (!window.dataSdk) {
+              throw new Error("Data SDK not available");
+            }
+
+            const result = await window.dataSdk.init(dataHandler);
+
+            if (result.isOk) {
+              isDataSdkReady = true;
+              updateConnectionStatus("connected");
+              console.log("✅ Data SDK connected successfully");
+              return true;
+            } else {
+              throw new Error(`Init failed: ${result.error}`);
+            }
+          } catch (error) {
+            console.error("❌ Data SDK connection error:", error);
+
+            connectionRetryCount++;
+
+            if (connectionRetryCount < maxRetries) {
+              updateConnectionStatus("retrying");
+              console.log(
+                `🔄 Retrying connection... (${connectionRetryCount}/${maxRetries})`
+              );
+
+              // Exponential backoff: 2s, 4s, 8s, 16s
+              const delay = Math.min(
+                2000 * Math.pow(2, connectionRetryCount - 1),
+                16000
+              );
+
+              setTimeout(tryConnect, delay);
+              return false;
+            } else {
+              updateConnectionStatus("error");
+              console.error("❌ Max retries reached. Connection failed.");
+              return false;
+            }
+          }
+        };
+
+        return await tryConnect();
+      }
+
+      function isStudentAlreadySubmitted(studentName) {
+        if (!studentName) return false;
+        // Allow students to submit up to 2 times
+        const studentSubmissions = allSubmissions.filter(
+          (submission) =>
+            submission.student_name &&
+            submission.student_name.toLowerCase() === studentName.toLowerCase()
+        );
+        return studentSubmissions.length >= 2;
+      }
+
+      function getStudentSubmissionCount(studentName) {
+        if (!studentName) return 0;
+        return allSubmissions.filter(
+          (submission) =>
+            submission.student_name &&
+            submission.student_name.toLowerCase() === studentName.toLowerCase()
+        ).length;
+      }
+
+      function showTeacherLogin() {
+        const modal = document.getElementById("teacher-login-modal");
+        modal.classList.remove("hidden");
+        document.getElementById("teacher-code").focus();
+
+        // Clear previous error
+        document.getElementById("code-error").classList.add("hidden");
+        document.getElementById("teacher-code").value = "";
+      }
+
+      function closeTeacherLogin() {
+        const modal = document.getElementById("teacher-login-modal");
+        modal.classList.add("hidden");
+      }
+
+      function verifyTeacherCode() {
+        const codeInput = document.getElementById("teacher-code");
+        const errorDiv = document.getElementById("code-error");
+        const correctCode = "Bismillah Lulus";
+
+        if (codeInput.value === correctCode) {
+          // Code is correct, close login modal and open teacher view
+          closeTeacherLogin();
+          toggleTeacherView();
+        } else {
+          // Code is wrong, show error
+          errorDiv.classList.remove("hidden");
+          codeInput.value = "";
+          codeInput.focus();
+
+          // Add shake animation
+          codeInput.classList.add("shake");
+          setTimeout(() => {
+            codeInput.classList.remove("shake");
+          }, 500);
+        }
+      }
+
+      function toggleTeacherView() {
+        const modal = document.getElementById("teacher-modal");
+        if (modal.classList.contains("hidden")) {
+          modal.classList.remove("hidden");
+          updateSubmissionsList(); // Refresh the list when opening
+        } else {
+          modal.classList.add("hidden");
+        }
+      }
+
+      async function deleteSubmission(submission) {
+        if (!isDataSdkReady || !window.dataSdk) {
+          showMessage("Data SDK tidak tersedia", "error");
+          return;
+        }
+
+        // Show confirmation dialog
+        const confirmed = await showConfirmDialog(
+          `Apakah Anda yakin ingin menghapus jawaban dari ${submission.student_name}?\n\nTindakan ini tidak dapat dibatalkan!`
+        );
+
+        if (!confirmed) return;
+
+        try {
+          const result = await window.dataSdk.delete(submission);
+
+          if (result.isOk) {
+            showMessage(
+              `Jawaban ${submission.student_name} berhasil dihapus`,
+              "success"
+            );
+
+            // Check if this was the current student's submission
+            const currentStudentName = document
+              .getElementById("student-name")
+              .value.trim();
+            if (
+              currentStudentName &&
+              currentStudentName.toLowerCase() ===
+                submission.student_name.toLowerCase()
+            ) {
+              // Reset the form if current student's submission was deleted
+              resetFormAfterDeletion();
+            }
+          } else {
+            showMessage("Gagal menghapus jawaban", "error");
+          }
+        } catch (error) {
+          console.error("Error deleting submission:", error);
+          showMessage("Terjadi kesalahan saat menghapus jawaban", "error");
+        }
+      }
+
+      async function deleteAllSubmissions() {
+        if (!isDataSdkReady || !window.dataSdk) {
+          showMessage("Data SDK tidak tersedia", "error");
+          return;
+        }
+
+        if (allSubmissions.length === 0) {
+          showMessage("Tidak ada data untuk dihapus", "info");
+          return;
+        }
+
+        // Show confirmation dialog
+        const confirmed = await showConfirmDialog(
+          `Apakah Anda yakin ingin menghapus SEMUA jawaban siswa?\n\nTotal: ${allSubmissions.length} jawaban\n\nTindakan ini tidak dapat dibatalkan!`
+        );
+
+        if (!confirmed) return;
+
+        try {
+          // Delete all submissions one by one
+          for (const submission of allSubmissions) {
+            const result = await window.dataSdk.delete(submission);
+            if (!result.isOk) {
+              console.error(
+                "Failed to delete submission:",
+                submission.student_name
+              );
+            }
+          }
+
+          showMessage("Semua jawaban berhasil dihapus", "success");
+
+          // Reset form if needed
+          resetFormAfterDeletion();
+        } catch (error) {
+          console.error("Error deleting all submissions:", error);
+          showMessage("Terjadi kesalahan saat menghapus data", "error");
+        }
+      }
+
+      function resetFormAfterDeletion() {
+        // Clear localStorage
+        localStorage.removeItem("newsAnalysisAnswers");
+        localStorage.removeItem("newsAnalysisSubmitted");
+        localStorage.removeItem("newsAnalysisStudentName");
+
+        // Reset form UI
+        const form = document.getElementById("analysisForm");
+        const inputs = form.querySelectorAll("input, textarea, button");
+        inputs.forEach((input) => {
+          input.disabled = false;
+          input.classList.remove("bg-gray-100", "cursor-not-allowed");
+          if (input.type !== "button") {
+            input.value = "";
+          }
+        });
+
+        // Reset status display
+        document
+          .getElementById("status-not-started")
+          .classList.remove("hidden");
+        document.getElementById("status-completed").classList.add("hidden");
+
+        // Reset status container style
+        const statusContainer = document.getElementById("status-container");
+        statusContainer.classList.remove("border-green-300", "bg-green-50");
+        statusContainer.classList.add("border-gray-300");
+      }
+
+      // Google Sheets Integration Functions
+      function showGoogleSheetsMenu() {
+        const modal = document.getElementById("google-sheets-modal");
+        modal.classList.remove("hidden");
+        updateDataPreview();
+        updateDataStatistics();
+      }
+
+      function closeGoogleSheetsMenu() {
+        const modal = document.getElementById("google-sheets-modal");
+        modal.classList.add("hidden");
+      }
+
+      function updateDataPreview() {
+        const tableBody = document.getElementById("preview-table-body");
+
+        if (allSubmissions.length === 0) {
+          tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="7" class="border border-gray-300 px-2 py-4 text-center text-gray-500">
+                            Belum ada data untuk ditampilkan
+                        </td>
+                    </tr>
+                `;
+          return;
+        }
+
+        // Sort submissions by submission time (newest first)
+        const sortedSubmissions = [...allSubmissions].sort(
+          (a, b) => new Date(b.submission_date) - new Date(a.submission_date)
+        );
+
+        tableBody.innerHTML = sortedSubmissions
+          .map(
+            (submission, index) => `
+                <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-300 px-2 py-1">${
+                      index + 1
+                    }</td>
+                    <td class="border border-gray-300 px-2 py-1">${
+                      submission.student_name
+                    }</td>
+                    <td class="border border-gray-300 px-2 py-1">${
+                      submission.submission_time
+                    }</td>
+                    <td class="border border-gray-300 px-2 py-1 text-center">${
+                      submission.attempt_number || 1
+                    }</td>
+                    <td class="border border-gray-300 px-2 py-1 text-center font-bold">${
+                      submission.total_score
+                    }/100</td>
+                    <td class="border border-gray-300 px-2 py-1 text-center">
+                        <span class="px-2 py-1 rounded text-xs font-bold ${getGradeColor(
+                          submission.grade
+                        )}">
+                            ${submission.grade}
+                        </span>
+                    </td>
+                    <td class="border border-gray-300 px-2 py-1 text-center">${
+                      submission.filled_fields
+                    }/4</td>
+                </tr>
+            `
+          )
+          .join("");
+      }
+
+      function updateDataStatistics() {
+        const totalSubmissions = allSubmissions.length;
+        const uniqueStudents = new Set(
+          allSubmissions.map((s) => s.student_name.toLowerCase())
+        ).size;
+        const averageScore =
+          totalSubmissions > 0
+            ? Math.round(
+                allSubmissions.reduce((sum, s) => sum + s.total_score, 0) /
+                  totalSubmissions
+              )
+            : 0;
+        const completionRate =
+          totalSubmissions > 0
+            ? Math.round(
+                (allSubmissions.filter((s) => s.filled_fields === 4).length /
+                  totalSubmissions) *
+                  100
+              )
+            : 0;
+
+        document.getElementById("total-submissions").textContent =
+          totalSubmissions;
+        document.getElementById("unique-students").textContent = uniqueStudents;
+        document.getElementById("average-score").textContent = averageScore;
+        document.getElementById("completion-rate").textContent =
+          completionRate + "%";
+      }
+
+      function getGradeColor(grade) {
+        switch (grade) {
+          case "A":
+            return "bg-green-100 text-green-800";
+          case "B+":
+            return "bg-blue-100 text-blue-800";
+          case "B":
+            return "bg-indigo-100 text-indigo-800";
+          case "C+":
+            return "bg-yellow-100 text-yellow-800";
+          case "C":
+            return "bg-orange-100 text-orange-800";
+          case "D":
+            return "bg-red-100 text-red-800";
+          default:
+            return "bg-gray-100 text-gray-800";
+        }
+      }
+
+      function exportToCSV() {
+        if (allSubmissions.length === 0) {
+          showMessage("Tidak ada data untuk diekspor", "warning");
+          return;
+        }
+
+        // Create CSV headers
+        const headers = [
+          "No",
+          "Nama Siswa",
+          "Waktu Submit",
+          "Percobaan Ke",
+          "Judul (25 poin)",
+          "Kepala Berita (25 poin)",
+          "Tubuh Berita (35 poin)",
+          "Ekor Berita (15 poin)",
+          "Nilai Judul",
+          "Nilai Kepala",
+          "Nilai Tubuh",
+          "Nilai Ekor",
+          "Total Nilai",
+          "Grade",
+          "Feedback",
+          "Bagian Terisi",
+          "Tanggal Submit",
+        ];
+
+        // Sort submissions by submission time
+        const sortedSubmissions = [...allSubmissions].sort(
+          (a, b) => new Date(b.submission_date) - new Date(a.submission_date)
+        );
+
+        // Create CSV rows
+        const rows = sortedSubmissions.map((submission, index) => [
+          index + 1,
+          `"${submission.student_name}"`,
+          `"${submission.submission_time}"`,
+          submission.attempt_number || 1,
+          `"${(submission.judul_text || "").replace(/"/g, '""')}"`,
+          `"${(submission.kepala_text || "").replace(/"/g, '""')}"`,
+          `"${(submission.tubuh_text || "").replace(/"/g, '""')}"`,
+          `"${(submission.ekor_text || "").replace(/"/g, '""')}"`,
+          submission.score_judul || 0,
+          submission.score_kepala || 0,
+          submission.score_tubuh || 0,
+          submission.score_ekor || 0,
+          submission.total_score || 0,
+          submission.grade || "",
+          `"${(submission.feedback || "").replace(/"/g, '""')}"`,
+          `${submission.filled_fields}/4`,
+          `"${submission.submission_date}"`,
+        ]);
+
+        // Combine headers and rows
+        const csvContent = [
+          headers.join(","),
+          ...rows.map((row) => row.join(",")),
+        ].join("\n");
+
+        // Create and download file
+        const blob = new Blob([csvContent], {
+          type: "text/csv;charset=utf-8;",
+        });
+        const link = document.createElement("a");
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute(
+          "download",
+          `analisis_berita_${new Date().toISOString().split("T")[0]}.csv`
+        );
+        link.style.visibility = "hidden";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        showMessage("File CSV berhasil didownload!", "success");
+      }
+
+      function copyToClipboard() {
+        if (allSubmissions.length === 0) {
+          showMessage("Tidak ada data untuk disalin", "warning");
+          return;
+        }
+
+        // Create tab-separated values for easy pasting into Google Sheets
+        const headers = [
+          "No",
+          "Nama Siswa",
+          "Waktu Submit",
+          "Percobaan Ke",
+          "Nilai Total",
+          "Grade",
+          "Nilai Judul",
+          "Nilai Kepala",
+          "Nilai Tubuh",
+          "Nilai Ekor",
+          "Bagian Terisi",
+          "Feedback",
+          "Judul",
+          "Kepala Berita",
+          "Tubuh Berita",
+          "Ekor Berita",
+        ];
+
+        const sortedSubmissions = [...allSubmissions].sort(
+          (a, b) => new Date(b.submission_date) - new Date(a.submission_date)
+        );
+
+        const rows = sortedSubmissions.map((submission, index) => [
+          index + 1,
+          submission.student_name,
+          submission.submission_time,
+          submission.attempt_number || 1,
+          submission.total_score || 0,
+          submission.grade || "",
+          submission.score_judul || 0,
+          submission.score_kepala || 0,
+          submission.score_tubuh || 0,
+          submission.score_ekor || 0,
+          `${submission.filled_fields}/4`,
+          submission.feedback || "",
+          submission.judul_text || "",
+          submission.kepala_text || "",
+          submission.tubuh_text || "",
+          submission.ekor_text || "",
+        ]);
+
+        const tsvContent = [
+          headers.join("\t"),
+          ...rows.map((row) => row.join("\t")),
+        ].join("\n");
+
+        // Copy to clipboard
+        navigator.clipboard
+          .writeText(tsvContent)
+          .then(() => {
+            showMessage(
+              "Data berhasil disalin ke clipboard! Paste di Google Sheets dengan Ctrl+V",
+              "success"
+            );
+          })
+          .catch(() => {
+            // Fallback for older browsers
+            const textArea = document.createElement("textarea");
+            textArea.value = tsvContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textArea);
+            showMessage(
+              "Data berhasil disalin ke clipboard! Paste di Google Sheets dengan Ctrl+V",
+              "success"
+            );
+          });
+      }
+
+      function generateGoogleSheetsLink() {
+        // Direct link to the specific Google Sheets
+        const googleSheetsUrl =
+          "https://docs.google.com/spreadsheets/d/1GuEEt6fZCnFn8i35fb_GiTGcBUskChy4OU1JdF6etwE/edit?usp=sharing";
+
+        // Open Google Sheets directly
+        window.open(googleSheetsUrl, "_blank", "noopener,noreferrer");
+
+        // Show success message
+        showMessage(
+          "Google Sheets dibuka di tab baru! Data terintegrasi otomatis.",
+          "success"
+        );
+      }
+
+      function updateSubmissionsList() {
+        // Update the teacher view with all submissions
+        const submissionsList = document.getElementById("submissions-list");
+
+        if (allSubmissions.length === 0) {
+          submissionsList.innerHTML = `
+                    <div class="text-center text-gray-500 py-8">
+                        <div class="text-4xl mb-4">📝</div>
+                        <p>Belum ada jawaban yang masuk</p>
+                        <p class="text-sm mt-2">Jawaban siswa akan muncul di sini setelah mereka submit</p>
+                    </div>
+                `;
+          return;
+        }
+
+        // Sort submissions by submission time (newest first)
+        const sortedSubmissions = [...allSubmissions].sort(
+          (a, b) => new Date(b.submission_date) - new Date(a.submission_date)
+        );
+
+        // Group submissions by student name
+        const groupedSubmissions = {};
+        sortedSubmissions.forEach((submission) => {
+          const name = submission.student_name;
+          if (!groupedSubmissions[name]) {
+            groupedSubmissions[name] = [];
+          }
+          groupedSubmissions[name].push(submission);
+        });
+
+        submissionsList.innerHTML = `
+                <div class="mb-4 p-4 bg-blue-50 rounded-lg">
+                    <h4 class="font-bold text-blue-800">📈 Ringkasan</h4>
+                    <p class="text-blue-700">Total jawaban: <strong>${
+                      allSubmissions.length
+                    }</strong></p>
+                    <p class="text-blue-700">Total siswa unik: <strong>${
+                      Object.keys(groupedSubmissions).length
+                    }</strong></p>
+                </div>
+                ${Object.entries(groupedSubmissions)
+                  .map(
+                    ([studentName, submissions], studentIndex) => `
+                    <div class="border rounded-lg p-4 bg-gray-50 mb-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="font-bold text-xl text-gray-800">${
+                              studentIndex + 1
+                            }. ${studentName}</h4>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
+                                ${submissions.length} jawaban
+                            </span>
+                        </div>
+                        
+                        ${submissions
+                          .map(
+                            (submission, attemptIndex) => `
+                            <div class="border-l-4 border-blue-400 pl-4 mb-4 bg-white rounded-r-lg p-3">
+                                <div class="flex justify-between items-start mb-3">
+                                    <div>
+                                        <h5 class="font-bold text-lg text-gray-800">Percobaan ${
+                                          attemptIndex + 1
+                                        }</h5>
+                                        <p class="text-sm text-gray-600">Dikerjakan: ${
+                                          submission.submission_time
+                                        }</p>
+                                        <p class="text-sm text-gray-600">Bagian terisi: ${
+                                          submission.filled_fields
+                                        }/4</p>
+                                        <div class="mt-2 flex items-center gap-4">
+                                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-bold">
+                                                Nilai: ${
+                                                  submission.total_score
+                                                }/100
+                                            </span>
+                                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold">
+                                                Grade: ${submission.grade}
+                                            </span>
+                                        </div>
+                                        <p class="text-sm text-gray-600 mt-1 italic">"${
+                                          submission.feedback
+                                        }"</p>
+                                    </div>
+                                    <div class="text-right flex flex-col gap-2">
+                                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                                            ✅ Selesai
+                                        </span>
+                                        <button onclick="deleteSubmission(allSubmissions.find(s => s.__backendId === '${
+                                          submission.__backendId
+                                        }'))" 
+                                                class="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600">
+                                            🗑️ Hapus
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Score Breakdown -->
+                                <div class="bg-gray-100 rounded-lg p-3 mb-4">
+                                    <h5 class="font-bold text-gray-800 mb-2">📊 Rincian Nilai:</h5>
+                                    <div class="grid grid-cols-2 gap-2 text-sm">
+                                        <div class="flex justify-between">
+                                            <span>Judul:</span>
+                                            <span class="font-bold">${
+                                              submission.score_judul || 0
+                                            }/25</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Kepala:</span>
+                                            <span class="font-bold">${
+                                              submission.score_kepala || 0
+                                            }/25</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Tubuh:</span>
+                                            <span class="font-bold">${
+                                              submission.score_tubuh || 0
+                                            }/35</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span>Ekor:</span>
+                                            <span class="font-bold">${
+                                              submission.score_ekor || 0
+                                            }/15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-3 text-sm">
+                                    <div class="border-l-4 border-yellow-400 pl-3">
+                                        <div class="flex justify-between items-center">
+                                            <strong>Judul:</strong>
+                                            <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">${
+                                              submission.score_judul || 0
+                                            }/25</span>
+                                        </div>
+                                        <p class="mt-1 text-gray-700">${
+                                          submission.judul_text ||
+                                          "<em>Tidak diisi</em>"
+                                        }</p>
+                                    </div>
+                                    
+                                    <div class="border-l-4 border-blue-400 pl-3">
+                                        <div class="flex justify-between items-center">
+                                            <strong>Kepala Berita:</strong>
+                                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">${
+                                              submission.score_kepala || 0
+                                            }/25</span>
+                                        </div>
+                                        <p class="mt-1 text-gray-700">${
+                                          submission.kepala_text ||
+                                          "<em>Tidak diisi</em>"
+                                        }</p>
+                                    </div>
+                                    
+                                    <div class="border-l-4 border-green-400 pl-3">
+                                        <div class="flex justify-between items-center">
+                                            <strong>Tubuh Berita:</strong>
+                                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">${
+                                              submission.score_tubuh || 0
+                                            }/35</span>
+                                        </div>
+                                        <p class="mt-1 text-gray-700">${
+                                          submission.tubuh_text
+                                            ? submission.tubuh_text.length > 200
+                                              ? submission.tubuh_text.substring(
+                                                  0,
+                                                  200
+                                                ) + "..."
+                                              : submission.tubuh_text
+                                            : "<em>Tidak diisi</em>"
+                                        }</p>
+                                    </div>
+                                    
+                                    <div class="border-l-4 border-pink-400 pl-3">
+                                        <div class="flex justify-between items-center">
+                                            <strong>Ekor Berita:</strong>
+                                            <span class="text-xs bg-pink-100 text-pink-800 px-2 py-1 rounded">${
+                                              submission.score_ekor || 0
+                                            }/15</span>
+                                        </div>
+                                        <p class="mt-1 text-gray-700">${
+                                          submission.ekor_text ||
+                                          "<em>Tidak diisi</em>"
+                                        }</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `
+                          )
+                          .join("")}
+                    </div>
+                `
+                  )
+                  .join("")}
+            `;
+
+        // Also update the status if current student already submitted
+        const currentStudentName = document
+          .getElementById("student-name")
+          .value.trim();
+        if (
+          currentStudentName &&
+          getStudentSubmissionCount(currentStudentName) > 0
+        ) {
+          const existingSubmissions = allSubmissions.filter(
+            (s) =>
+              s.student_name &&
+              s.student_name.toLowerCase() === currentStudentName.toLowerCase()
+          );
+          if (existingSubmissions.length > 0) {
+            // Show the latest submission
+            const latestSubmission = existingSubmissions.sort(
+              (a, b) =>
+                new Date(b.submission_date) - new Date(a.submission_date)
+            )[0];
+            updateUIForCompletion(latestSubmission);
+          }
+        }
+      }
+
+      function clearForm() {
+        const form = document.getElementById("analysisForm");
+        const inputs = form.querySelectorAll("input, textarea");
+
+        inputs.forEach((input) => {
+          input.value = "";
+        });
+
+        // Show confirmation message
+        showMessage("Form telah dibersihkan!", "info");
+      }
+
+      async function submitFinalAnswers() {
+        // Check Data SDK connection first
+        if (!isDataSdkReady || !window.dataSdk) {
+          showMessage(
+            "❌ Koneksi data belum siap! Silakan tunggu atau refresh halaman.",
+            "error"
+          );
+          return;
+        }
+
+        // Check if already submitted (max 2 times)
+        const studentName = document
+          .getElementById("student-name")
+          .value.trim();
+        const submissionCount = getStudentSubmissionCount(studentName);
+
+        if (submissionCount >= 2) {
+          showMessage(
+            "Siswa dengan nama ini sudah mengerjakan tugas 2 kali (maksimal)!",
+            "warning"
+          );
+          return;
+        }
+
+        if (submissionCount === 1) {
+          const confirmed = await showConfirmDialog(
+            `${studentName} sudah pernah mengerjakan tugas 1 kali.\n\nIni akan menjadi percobaan ke-2 (terakhir).\n\nLanjutkan?`
+          );
+          if (!confirmed) return;
+        }
+
+        const form = document.getElementById("analysisForm");
+        const formData = new FormData(form);
+        const answers = {};
+
+        // Collect all form data
+        for (let [key, value] of formData.entries()) {
+          answers[key] = value.trim();
+        }
+
+        // Validate required fields
+        if (!answers["student-name"] || answers["student-name"] === "") {
+          showMessage("Nama siswa harus diisi!", "warning");
+          document.getElementById("student-name").focus();
+          return;
+        }
+
+        // Check if at least analysis fields are filled
+        const analysisFields = [
+          "judul-text",
+          "kepala-text",
+          "tubuh-text",
+          "ekor-text",
+        ];
+        const filledAnalysis = analysisFields.filter(
+          (field) => answers[field] && answers[field] !== ""
+        ).length;
+
+        if (filledAnalysis === 0) {
+          showMessage(
+            "Silakan isi minimal satu bagian analisis sebelum submit!",
+            "warning"
+          );
+          return;
+        }
+
+        // Show confirmation dialog
+        showConfirmDialog(
+          `Apakah Anda yakin ingin submit jawaban?\n\nNama: ${
+            answers["student-name"]
+          }\nBagian terisi: ${filledAnalysis}/4\nPercobaan ke: ${
+            submissionCount + 1
+          }`
+        ).then(async (confirmed) => {
+          if (!confirmed) return;
+
+          // Show loading state
+          const submitBtn = document.getElementById("submit-btn");
+          const originalText = submitBtn.textContent;
+          submitBtn.disabled = true;
+          submitBtn.textContent = "⏳ Memproses jawaban...";
+          submitBtn.classList.add("pulse");
+
+          try {
+            // Calculate automatic score
+            const gradingResult = calculateScore(answers);
+
+            // Prepare data for Canva Sheet
+            const submissionData = {
+              student_name: answers["student-name"],
+              judul_text: answers["judul-text"] || "",
+              kepala_text: answers["kepala-text"] || "",
+              tubuh_text: answers["tubuh-text"] || "",
+              ekor_text: answers["ekor-text"] || "",
+              submission_date: new Date().toISOString(),
+              submission_time: new Date().toLocaleString("id-ID"),
+              filled_fields: filledAnalysis,
+              score_judul: gradingResult.score_judul,
+              score_kepala: gradingResult.score_kepala,
+              score_tubuh: gradingResult.score_tubuh,
+              score_ekor: gradingResult.score_ekor,
+              total_score: gradingResult.total_score,
+              grade: gradingResult.grade,
+              feedback: gradingResult.feedback,
+              attempt_number: submissionCount + 1,
+            };
+
+            // Save to Canva Sheet via Data SDK
+            const result = await window.dataSdk.create(submissionData);
+
+            if (result.isOk) {
+              // Also save locally for immediate UI update
+              localStorage.setItem(
+                "newsAnalysisAnswers",
+                JSON.stringify(submissionData)
+              );
+              localStorage.setItem("newsAnalysisSubmitted", "true");
+              localStorage.setItem(
+                "newsAnalysisStudentName",
+                answers["student-name"]
+              );
+
+              // Update UI to show completion
+              updateUIForCompletion(submissionData);
+
+              // Show score to student
+              showScoreModal(
+                gradingResult,
+                answers["student-name"],
+                submissionCount + 1
+              );
+
+              showMessage(
+                `✅ Tugas berhasil diselesaikan! Terima kasih ${answers["student-name"]}.`,
+                "success"
+              );
+            } else {
+              throw new Error("Gagal memproses jawaban: " + result.error);
+            }
+          } catch (error) {
+            console.error("Error saving submission:", error);
+            showMessage(
+              "❌ Gagal memproses jawaban. Silakan coba lagi atau hubungi guru.",
+              "error"
+            );
+
+            // Restore button state
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+            submitBtn.classList.remove("pulse");
+          }
+        });
+      }
+
+      function showConfirmDialog(message) {
+        // Create custom confirmation modal
+        const modal = document.createElement("div");
+        modal.className =
+          "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50";
+        modal.innerHTML = `
+                <div class="bg-white rounded-lg p-6 max-w-md mx-4">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Konfirmasi Submit</h3>
+                    <p class="text-gray-600 mb-6 whitespace-pre-line">${message}</p>
+                    <div class="flex gap-3">
+                        <button id="confirm-no" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 flex-1">
+                            Batal
+                        </button>
+                        <button id="confirm-yes" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 flex-1">
+                            Ya, Submit!
+                        </button>
+                    </div>
+                </div>
+            `;
+
+        document.body.appendChild(modal);
+
+        return new Promise((resolve) => {
+          document.getElementById("confirm-yes").onclick = () => {
+            document.body.removeChild(modal);
+            resolve(true);
+          };
+          document.getElementById("confirm-no").onclick = () => {
+            document.body.removeChild(modal);
+            resolve(false);
+          };
+        });
+      }
+
+      function updateUIForCompletion(submissionData) {
+        // Update status display
+        document.getElementById("status-not-started").classList.add("hidden");
+        document.getElementById("status-completed").classList.remove("hidden");
+        document.getElementById(
+          "completion-info"
+        ).textContent = `Diselesaikan oleh: ${submissionData["student-name"]} pada ${submissionData.submission_time}`;
+
+        // Update status container style
+        const statusContainer = document.getElementById("status-container");
+        statusContainer.classList.remove("border-gray-300");
+        statusContainer.classList.add("border-green-300", "bg-green-50");
+      }
+
+      function showScoreModal(gradingResult, studentName, attemptNumber) {
+        // Create score modal
+        const modal = document.createElement("div");
+        modal.className =
+          "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50";
+        modal.innerHTML = `
+                <div class="bg-white rounded-lg p-6 max-w-md mx-4">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">🎉</div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Hasil Penilaian</h3>
+                        <p class="text-gray-600">Selamat ${studentName}!</p>
+                        <p class="text-sm text-purple-600 mt-1">Percobaan ke-${attemptNumber}</p>
+
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-4 mb-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">${gradingResult.total_score}/100</div>
+                            <div class="text-xl font-bold text-green-600 mb-2">Grade: ${gradingResult.grade}</div>
+                            <p class="text-sm text-gray-700 italic">"${gradingResult.feedback}"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2 mb-6">
+                        <h4 class="font-bold text-gray-800">Rincian Nilai:</h4>
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <div class="flex justify-between bg-yellow-50 p-2 rounded">
+                                <span>Judul:</span>
+                                <span class="font-bold">${gradingResult.score_judul}/25</span>
+                            </div>
+                            <div class="flex justify-between bg-blue-50 p-2 rounded">
+                                <span>Kepala:</span>
+                                <span class="font-bold">${gradingResult.score_kepala}/25</span>
+                            </div>
+                            <div class="flex justify-between bg-green-50 p-2 rounded">
+                                <span>Tubuh:</span>
+                                <span class="font-bold">${gradingResult.score_tubuh}/35</span>
+                            </div>
+                            <div class="flex justify-between bg-pink-50 p-2 rounded">
+                                <span>Ekor:</span>
+                                <span class="font-bold">${gradingResult.score_ekor}/15</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="this.parentElement.parentElement.remove()" class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                        Tutup
+                    </button>
+                </div>
+            `;
+
+        document.body.appendChild(modal);
+
+        // Auto remove after 15 seconds
+        setTimeout(() => {
+          if (modal.parentNode) {
+            modal.remove();
+          }
+        }, 15000);
+      }
+
+      function showMessage(message, type) {
+        // Remove existing message
+        const existingMessage = document.querySelector(".message-toast");
+        if (existingMessage) {
+          existingMessage.remove();
+        }
+
+        // Create message element
+        const messageDiv = document.createElement("div");
+        messageDiv.className = `message-toast fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg z-50 transition-all duration-300`;
+
+        // Set color based on type
+        switch (type) {
+          case "success":
+            messageDiv.className += " bg-green-500 text-white";
+            break;
+          case "warning":
+            messageDiv.className += " bg-yellow-500 text-white";
+            break;
+          case "info":
+            messageDiv.className += " bg-blue-500 text-white";
+            break;
+          case "error":
+            messageDiv.className += " bg-red-500 text-white";
+            break;
+          default:
+            messageDiv.className += " bg-gray-500 text-white";
+        }
+
+        messageDiv.textContent = message;
+        document.body.appendChild(messageDiv);
+
+        // Auto remove after 5 seconds for errors, 3 seconds for others
+        const timeout = type === "error" ? 5000 : 3000;
+        setTimeout(() => {
+          messageDiv.style.opacity = "0";
+          messageDiv.style.transform = "translateX(100%)";
+          setTimeout(() => {
+            if (messageDiv.parentNode) {
+              messageDiv.remove();
+            }
+          }, 300);
+        }, timeout);
+      }
+
+      // Load saved answers on page load
+      function loadSavedAnswers() {
+        // For multiple submissions, we don't auto-fill the form
+        // Students can start fresh each time
+      }
+
+      // Auto-save draft while typing (only if not submitted)
+      function setupAutoSave() {
+        const form = document.getElementById("analysisForm");
+        const inputs = form.querySelectorAll("input, textarea");
+
+        inputs.forEach((input) => {
+          input.addEventListener("input", () => {
+            // Auto-save draft for current session only
+            const formData = new FormData(form);
+            const draftAnswers = {};
+
+            for (let [key, value] of formData.entries()) {
+              draftAnswers[key] = value.trim();
+            }
+
+            // Save as session draft (not persistent)
+            sessionStorage.setItem(
+              "newsAnalysisDraft",
+              JSON.stringify(draftAnswers)
+            );
+          });
+        });
+      }
+
+      // Load session draft on page load
+      function loadSessionDraft() {
+        const sessionDraft = sessionStorage.getItem("newsAnalysisDraft");
+        if (sessionDraft) {
+          try {
+            const answers = JSON.parse(sessionDraft);
+            Object.entries(answers).forEach(([key, value]) => {
+              const field = document.getElementById(key);
+              if (field && typeof value === "string") {
+                field.value = value;
+              }
+            });
+          } catch (e) {
+            console.log("Error loading session draft:", e);
+          }
+        }
+      }
+
+      // Load saved answers when page loads
+      document.addEventListener("DOMContentLoaded", async () => {
+        // Initialize Data SDK with robust connection handling
+        await initializeDataSdk();
+
+        loadSavedAnswers();
+        loadSessionDraft();
+        setupAutoSave();
+      });
+
+      async function onConfigChange(config) {
+        const titleElement = document.getElementById("main-title");
+        const instructionElement = document.getElementById("instruction-text");
+
+        if (titleElement) {
+          titleElement.textContent =
+            config.main_title || defaultConfig.main_title;
+        }
+
+        if (instructionElement) {
+          instructionElement.textContent =
+            config.instruction_text || defaultConfig.instruction_text;
+        }
+      }
+
+      function mapToCapabilities(config) {
+        return {
+          recolorables: [],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined,
+        };
+      }
+
+      function mapToEditPanelValues(config) {
+        return new Map([
+          ["main_title", config.main_title || defaultConfig.main_title],
+          [
+            "instruction_text",
+            config.instruction_text || defaultConfig.instruction_text,
+          ],
+        ]);
+      }
+
+      // Initialize Element SDK
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange,
+          mapToCapabilities,
+          mapToEditPanelValues,
+        });
+      }
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'99cfd26132d8ce11',t:'MTc2Mjg4NTQxNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
